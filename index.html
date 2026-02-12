@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FB Profile Cyber Hacker - By.MR DUBAI</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        /* FONT FUTURISTIK */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
+
+        :root {
+            --cyber-pink: #ff00ff;
+            --cyber-blue: #00ffff;
+            --dark-bg: #050505;
+            --panel-bg: rgba(15, 15, 15, 0.9);
+        }
+
+        * { box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Share Tech Mono', monospace; 
+            background-color: var(--dark-bg);
+            background-image: linear-gradient(rgba(255, 0, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 0, 255, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            margin: 0; 
+            padding: 0; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            color: white;
+        }
+
+        .warning-strip {
+            width: 100%;
+            background: #ff0055;
+            color: white;
+            text-align: center;
+            padding: 12px 0;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            box-shadow: 0 0 20px rgba(255, 0, 85, 0.8);
+            border-bottom: 3px solid var(--cyber-pink);
+            z-index: 100;
+        }
+
+        .container { width: 100%; max-width: 450px; padding: 20px; }
+
+        #capture-area { 
+            background: white; 
+            width: 100%; 
+            aspect-ratio: 3 / 2;
+            overflow: hidden; 
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            border: none;
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.4);
+        }
+
+        .cover-photo { width: 100%; height: 50%; background-color: #4A67A2; background-size: cover; background-position: center; flex-shrink: 0; }
+        
+        .profile-header-left { 
+            padding: 0 10px; 
+            position: relative; 
+            margin-top: -100px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: flex-start;
+            flex-grow: 1;
+        }
+
+        .avatar-container { 
+            width: 145px; height: 145px; border-radius: 50%; 
+            border: 4px solid white; 
+            background: white; 
+            overflow: hidden; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .avatar-border-blue {
+            width: 100%; height: 100%; border-radius: 50%;
+            border: 4px solid #1877F2; 
+            padding: 3px;
+        }
+        .avatar-inner { 
+            width: 100%; height: 100%; border-radius: 50%; 
+            border: 2px solid white; 
+            overflow: hidden; 
+            background: #e4e6eb;
+        }
+        .avatar-inner img { width: 100%; height: 100%; object-fit: cover; }
+
+        .info { margin-top: 10px; text-align: left; width: 100%; padding-left: 10px; font-family: 'Segoe UI', Arial, sans-serif; }
+        .name { font-size: 23px; font-weight: 800; margin: 0; color: #050505; letter-spacing: -0.5px; }
+
+        .stats { margin-top: 4px; color: #65676b; font-size: 14px; padding-bottom: 120px; }
+        .stats b { color: #050505; }
+
+        .admin-panel { 
+            background: var(--panel-bg); 
+            border: 1px solid var(--cyber-pink);
+            border-radius: 4px; 
+            padding: 20px; 
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.1); 
+            width: 100%; 
+            margin-top: 20px; 
+            backdrop-filter: blur(5px);
+        }
+
+        .admin-panel h3 { 
+            margin: 0 0 15px 0; 
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px; 
+            color: var(--cyber-blue); 
+            border-bottom: 1px solid var(--cyber-pink); 
+            padding-bottom: 8px; 
+            text-align: center;
+            text-transform: uppercase;
+        }
+        
+        .field { margin-bottom: 12px; }
+        .field label { 
+            display: block; 
+            font-size: 10px; 
+            color: var(--cyber-pink); 
+            margin-bottom: 4px; 
+            text-transform: uppercase;
+        }
+        
+        input[type="text"], select { 
+            width: 100%; 
+            padding: 10px; 
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #333; 
+            border-radius: 0px; 
+            font-size: 13px; 
+            color: #00ff00; 
+            outline: none; 
+            font-family: 'Share Tech Mono', monospace;
+            border-left: 3px solid var(--cyber-pink);
+        }
+        
+        .btn-save { 
+            width: 100%; 
+            padding: 15px; 
+            background: transparent; 
+            color: var(--cyber-pink); 
+            border: 2px solid var(--cyber-pink); 
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900; 
+            cursor: pointer; 
+            font-size: 13px; 
+            margin-top: 10px; 
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .btn-save:hover { background: var(--cyber-pink); color: black; box-shadow: 0 0 15px var(--cyber-pink); }
+    </style>
+</head>
+<body>
+
+<div class="warning-strip">SYSTEM BREACH: ACCESS GRANTED (BY.MR DUBAI)</div>
+
+<div class="container">
+    <div id="capture-area">
+        <div class="cover-photo" id="displayCover"></div>
+        <div class="profile-header-left">
+            <div class="avatar-container">
+                <div class="avatar-border-blue">
+                    <div class="avatar-inner">
+                        <img id="displayAvatar" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=">
+                    </div>
+                </div>
+            </div>
+            <div class="info">
+                <h1 id="displayName" class="name">Bayu Kurniawan</h1>
+                <div class="stats">
+                    <span id="displayFollowers"><b>999 rb</b></span> pengikut &bull; <span id="displayFollowing"><b>260</b></span> mengikuti
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="admin-panel">
+        <h3>Hacker Console Settings</h3>
+        <div class="field">
+            <label>Full Identity Name</label>
+            <input type="text" id="inName" value="Bayu Kurniawan" oninput="sync()">
+        </div>
+        
+        <div class="field">
+            <label>Followers Database</label>
+            <div style="display: flex; gap: 8px;">
+                <input type="text" id="inFollowersNum" value="999" oninput="sync()" style="flex: 2;">
+                <select id="inUnit" onchange="sync()" style="flex: 1;">
+                    <option value="rb">rb</option><option value="jt">jt</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="field">
+            <label>Following Trace</label>
+            <input type="text" id="inFollowing" value="260" oninput="sync()">
+        </div>
+
+        <div class="field">
+            <label>Upload Cover (3:2)</label>
+            <input type="file" accept="image/*" onchange="upload(event, 'displayCover', true)">
+        </div>
+        <div class="field">
+            <label>Upload Avatar</label>
+            <input type="file" accept="image/*" onchange="upload(event, 'displayAvatar', false)">
+        </div>
+        <button class="btn-save" onclick="saveImage()">Capture & Save Data</button>
+    </div>
+</div>
+
+<script>
+    function sync() {
+        document.getElementById('displayName').innerText = document.getElementById('inName').value;
+        const fNum = document.getElementById('inFollowersNum').value;
+        const fUnit = document.getElementById('inUnit').value;
+        document.getElementById('displayFollowers').innerHTML = `<b>${fNum} ${fUnit}</b>`;
+        const following = document.getElementById('inFollowing').value;
+        document.getElementById('displayFollowing').innerHTML = `<b>${following}</b>`;
+    }
+
+    function upload(event, id, isCover) {
+        const reader = new FileReader();
+        reader.onload = function() {
+            const el = document.getElementById(id);
+            if(isCover) el.style.backgroundImage = `url('${reader.result}')`;
+            else el.src = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    }
+
+    function saveImage() {
+        const area = document.getElementById('capture-area');
+        html2canvas(area, { 
+            scale: 3, 
+            useCORS: true, 
+            allowTaint: true
+        }).then(canvas => {
+            const link = document.createElement('a');
+            link.download = 'fb-hacker-profile.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        });
+    }
+</script>
+</body>
+</html>
